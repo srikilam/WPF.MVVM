@@ -1,0 +1,8 @@
+﻿<Window x:Class="WpfData.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WPF.MVVM.SQL.CRUD" Height="350" Width="525">
+    <Grid>
+        <Frame Source="/Views/ProductsView.xaml" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>

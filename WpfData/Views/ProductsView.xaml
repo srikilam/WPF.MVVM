@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="WpfData.Views.ProductsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="350">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <Label Content="{Binding Message}" FontSize="12" Foreground="Crimson"/>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Add" Width="80" Command="{Binding AddCommand}"/>
+                <Button Content="Edit" Width="80" Command="{Binding EditCommand}" IsEnabled="False"/>
+                <Button Content="Delete" Width="80" Command="{Binding DeleteCommand}"/>
+                <Button Content="Search" Width="80" Command="{Binding SearchCommand}"/>
+            </StackPanel>
+            <ListBox Margin="0,10,0,0"
+                     ItemsSource="{Binding Products}"
+                     SelectedItem="{Binding SelectedProduct}"
+                     Height="auto">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="{Binding ProductName}"/>
+                            <TextBlock Grid.Column="1" Text="{Binding Units}"/>
+                            
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+    </Grid>
+</UserControl>

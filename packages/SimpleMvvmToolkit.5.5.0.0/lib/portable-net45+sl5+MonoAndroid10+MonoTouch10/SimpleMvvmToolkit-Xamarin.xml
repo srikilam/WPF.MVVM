@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SimpleMvvmToolkit-Xamarin</name>
+    </assembly>
+    <members>
+        <member name="T:SimpleMvvmToolkit.MessageBus">
+            <summary>
+            Facilitates communication among view-models.
+            To prevent memory leaks weak references are used.
+            </summary>
+        </member>
+        <member name="P:SimpleMvvmToolkit.MessageBus.Default">
+            <summary>
+            Singleton of MessageBus.
+            </summary>
+        </member>
+        <member name="T:SimpleMvvmToolkit.ModelBase`1">
+            <summary>
+            Provides support to entities for two-way data binding by
+            implementing INotifyPropertyChanged with a lambda expression.
+            </summary>
+            <typeparam name="TModel">Class inheriting from ModelBase</typeparam>
+        </member>
+        <member name="M:SimpleMvvmToolkit.ModelBase`1.#ctor">
+            <summary>
+            Public ctor required for serialization.
+            </summary>
+        </member>
+        <member name="M:SimpleMvvmToolkit.ModelBase`1.GetErrors(System.String)">
+            <summary>
+            Enumeration for sequence of errors.
+            </summary>
+            <param name="propertyName">Property name</param>
+            <returns>Sequence of errors.</returns>
+        </member>
+        <member name="M:SimpleMvvmToolkit.ModelBase`1.ValidateProperty``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Object)">
+            <summary>
+            Allows you to specify a lambda for property validation
+            </summary>
+            <typeparam name="TResult">Property type</typeparam>
+            <param name="property">Property for validation</param>
+            <param name="value">Value being validated</param>
+        </member>
+        <member name="E:SimpleMvvmToolkit.ModelBase`1.ErrorsChanged">
+            <summary>
+            Notification that error list has changed.
+            </summary>
+        </member>
+        <member name="P:SimpleMvvmToolkit.ModelBase`1.HasErrors">
+            <summary>
+            Returns true if errors list is not empty.
+            </summary>
+        </member>
+        <member name="T:SimpleMvvmToolkit.ViewModelBase`1">
+            <summary>
+            Base class for non-detail view-models
+            </summary>
+            <typeparam name="TViewModel">Class inheriting from ViewModelBase</typeparam>
+        </member>
+        <member name="M:SimpleMvvmToolkit.ViewModelBase`1.#ctor">
+            <summary>
+            Protected constructor for ViewModelBase.
+            </summary>
+        </member>
+        <member name="M:SimpleMvvmToolkit.ViewModelBase`1.GetErrors(System.String)">
+            <summary>
+            Enumeration for sequence of errors.
+            </summary>
+            <param name="propertyName">Property name</param>
+            <returns>Sequence of errors.</returns>
+        </member>
+        <member name="M:SimpleMvvmToolkit.ViewModelBase`1.ValidateProperty``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Object)">
+            <summary>
+            Allows you to specify a lambda for property validation
+            </summary>
+            <typeparam name="TResult">Property type</typeparam>
+            <param name="property">Property for validation</param>
+            <param name="value">Value being validated</param>
+        </member>
+        <member name="E:SimpleMvvmToolkit.ViewModelBase`1.ErrorsChanged">
+            <summary>
+            Notification that errors have changed.
+            </summary>
+        </member>
+        <member name="P:SimpleMvvmToolkit.ViewModelBase`1.HasErrors">
+            <summary>
+            Returns true if errors list is not empty.
+            </summary>
+        </member>
+        <member name="T:SimpleMvvmToolkit.ViewModelDetailBase`2">
+            <summary>
+            Base class for detail view-models. Also provides support for IEditableDataObject.
+            </summary>
+            <typeparam name="TViewModel">Class inheriting from ViewModelBase</typeparam>
+            <typeparam name="TModel">Detail entity type</typeparam>
+        </member>
+        <member name="M:SimpleMvvmToolkit.ViewModelDetailBase`2.#ctor">
+            <summary>
+            Protected constructor for ViewModelDetailBase.
+            </summary>
+        </member>
+        <member name="P:SimpleMvvmToolkit.ViewModelDetailBase`2.Model">
+            <summary>
+            Detail entity
+            </summary>
+        </member>
+        <member name="P:SimpleMvvmToolkit.ViewModelDetailBase`2.IsValid">
+            <summary>
+            Returns true if there are no validation errors.
+            </summary>
+        </member>
+    </members>
+</doc>
